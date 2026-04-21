@@ -31,6 +31,7 @@ SECRET_KEY = os.getenv(
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv('DJANGO_DEBUG', 'True').lower() == 'true'
+ENABLE_HTTPS_SECURITY = os.getenv('DJANGO_ENABLE_HTTPS_SECURITY', 'False').lower() == 'true'
 
 ALLOWED_HOSTS = [
     host.strip()
@@ -240,7 +241,7 @@ SESSION_COOKIE_SECURE = False  # True في الإنتاج مع HTTPS
 SESSION_COOKIE_SAMESITE = 'Lax'
 
 # Security Settings (للإنتاج)
-if not DEBUG:
+if ENABLE_HTTPS_SECURITY:
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     SECURE_SSL_REDIRECT = True
