@@ -202,4 +202,3 @@ const CourseEdit = () => {
 }
 
 export default CourseEdit
-

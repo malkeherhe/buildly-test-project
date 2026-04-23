@@ -38,7 +38,7 @@ const Navbar = () => {
           <Link to={isAdmin ? "/admin/dashboard" : "/dashboard"} className="navbar-brand">
             منصة التعلم
           </Link>
-          
+
           <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
             {isAdmin ? (
               <>
@@ -64,7 +64,7 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          
+
           <button
             className="menu-toggle"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -80,4 +80,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-

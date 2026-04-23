@@ -20,7 +20,7 @@
         "password2":"learner123!"
         }
 
-    
+
 
 3. login for any usertype:
   post http://127.0.0.1:8000/api/account/login/

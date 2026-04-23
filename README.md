@@ -22,6 +22,8 @@ Buildly is a Django + React platform for managing project-based learning paths, 
 - `docs`: reports and testing artifacts
 - `.github/workflows/ci.yml`: CI pipeline
 
+
+
 ## Local Run
 
 ### Backend
@@ -101,3 +103,16 @@ If you test a protected API endpoint, pass a bearer token with `--token`.
 
 - Backend settings are environment-aware for `SECRET_KEY`, `DEBUG`, `ALLOWED_HOSTS`, and CORS.
 - Unicode console `print()` calls that caused Windows test/runtime failures were removed.
+
+
+## GitLeaks (Secrets Scanning)
+
+### Run in CI
+GitLeaks runs automatically in GitHub Actions as part of the CI pipeline.
+
+### Run locally with pre-commit
+Install pre-commit first:
+
+```bash
+pip install pre-commit
+pre-commit install

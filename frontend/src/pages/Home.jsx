@@ -81,8 +81,8 @@ const Home = () => {
           <div className="hero-content">
             <h1 className="hero-title">التعلم القائم على المشاريع</h1>
             <p className="hero-description">
-              منصة تعليمية مبتكرة تجمع بين التعلم النظري والتطبيق العملي. 
-              تعلم البرمجة من خلال بناء مشاريع حقيقية خطوة بخطوة. 
+              منصة تعليمية مبتكرة تجمع بين التعلم النظري والتطبيق العملي.
+              تعلم البرمجة من خلال بناء مشاريع حقيقية خطوة بخطوة.
               ابدأ رحلتك التعليمية اليوم واكتسب المهارات التي تحتاجها لتصبح مطوراً محترفاً.
             </p>
             <div className="hero-actions">
@@ -90,7 +90,7 @@ const Home = () => {
                 ابدأ مجاناً
               </Link>
             </div>
-            
+
             {/* Platform Statistics */}
             <div className="platform-stats">
               <div className="stat-item">
@@ -209,4 +209,3 @@ const Home = () => {
 }
 
 export default Home
-

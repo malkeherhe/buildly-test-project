@@ -1,16 +1,16 @@
 api/projects/
 
-1. create project 
+1. create project
 post http://127.0.0.1:8000/api/projects/create/
  Content-Type: application/json
  Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
-  
+
 
 2. update project
   put http://127.0.0.1:8000/api/projects/project_id/update/
   Content-Type: application/json
   Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
-  
+
 
 3.delete project ConfirmDelete
    http://127.0.0.1:8000/api/projects/project_id/confirm-delete/

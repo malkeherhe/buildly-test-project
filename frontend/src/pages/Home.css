@@ -392,7 +392,7 @@
   .steps-container {
     grid-template-columns: repeat(4, 1fr);
   }
-  
+
   .step-arrow {
     display: block;
   }
@@ -783,4 +783,3 @@
     width: 100%;
   }
 }
-

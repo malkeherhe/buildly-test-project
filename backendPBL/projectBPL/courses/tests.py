@@ -6,7 +6,6 @@ from rest_framework.test import APITestCase
 
 from .models import Course
 
-
 User = get_user_model()
 
 
@@ -101,7 +100,9 @@ class CourseApiIntegrationTests(APITestCase):
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
         self.assertTrue(response.data["success"])
-        self.assertEqual(response.data["course"]["title"], "Performance Engineering Path")
+        self.assertEqual(
+            response.data["course"]["title"], "Performance Engineering Path"
+        )
 
     def test_learner_can_join_course_and_see_it_in_my_courses(self):
         self.authenticate(self.learner)
@@ -117,7 +118,9 @@ class CourseApiIntegrationTests(APITestCase):
         self.assertTrue(join_response.data["success"])
         self.assertEqual(my_courses_response.status_code, status.HTTP_200_OK)
         self.assertEqual(my_courses_response.data["count"], 1)
-        self.assertEqual(my_courses_response.data["courses"][0]["title"], self.course.title)
+        self.assertEqual(
+            my_courses_response.data["courses"][0]["title"], self.course.title
+        )
 
     def test_learner_cannot_join_same_course_twice(self):
         self.authenticate(self.learner)

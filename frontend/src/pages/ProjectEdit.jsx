@@ -73,7 +73,7 @@ const ProjectEdit = () => {
     } catch (err) {
       const errorData = err.response?.data
       console.error('Error updating project:', err.response?.data || err.message)
-      
+
       if (errorData?.message) {
         setError(errorData.message)
       } else if (errorData?.errors) {
@@ -82,7 +82,7 @@ const ProjectEdit = () => {
           const fieldErrors = Object.entries(errorData.errors)
             .map(([field, messages]) => {
               const fieldName = field === 'non_field_errors' ? '' : `${field}: `
-              return Array.isArray(messages) 
+              return Array.isArray(messages)
                 ? `${fieldName}${messages.join(', ')}`
                 : `${fieldName}${messages}`
             })
@@ -272,4 +272,3 @@ const ProjectEdit = () => {
 }
 
 export default ProjectEdit
-

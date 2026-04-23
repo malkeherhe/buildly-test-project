@@ -1,12 +1,11 @@
+from courses.models import Course
 from django.contrib.auth import get_user_model
 from django.test import TestCase
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
-from courses.models import Course
 from .models import Project
-
 
 User = get_user_model()
 
@@ -108,7 +107,9 @@ class ProjectApiIntegrationTests(APITestCase):
         self.assertTrue(create_response.data["success"])
         self.assertEqual(list_response.status_code, status.HTTP_200_OK)
         self.assertEqual(list_response.data["count"], 1)
-        self.assertEqual(list_response.data["projects"][0]["title"], "Capstone API Project")
+        self.assertEqual(
+            list_response.data["projects"][0]["title"], "Capstone API Project"
+        )
 
     def test_learner_can_start_project_only_after_joining_course(self):
         project = Project.objects.create(

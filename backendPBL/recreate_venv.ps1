@@ -80,5 +80,3 @@ Write-Host "2. pip install -r requirements.txt" -ForegroundColor White
 Write-Host "3. python manage.py migrate" -ForegroundColor White
 Write-Host "4. python manage.py runserver" -ForegroundColor White
 Write-Host ""
-
-

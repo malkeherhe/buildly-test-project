@@ -19,5 +19,3 @@ Write-Host "اضغط CTRL+C لإيقاف السيرفر" -ForegroundColor Yellow
 Write-Host ""
 
 python manage.py runserver
-
-

@@ -1,7 +1,7 @@
 هذا التطبيق لإدارة المسارات التعليمية:
 المسار التعليمي دالة عليه باسم Course :
      في الDB  كل مسار تعليمي له الحقول التالية:
-     1.pathid 
+     1.pathid
      2.title
      3.description
      4.level
@@ -12,7 +12,7 @@
      10.instructor : مين انشأه
      11.enrolled_learners:
                المتعلمين المنضمين للمسار
-      12.created_at          
+      12.created_at
       13.updated_at
       14.is_active
 
@@ -69,17 +69,17 @@ B. للمتعلم
 
 
 ملاحظة من اجل العلاقات في ال class diagram:
-المسار يوجد فيه اكثر من مشروع 
-المشروع يوجد في مسار واحد فقط 
+المسار يوجد فيه اكثر من مشروع
+المشروع يوجد في مسار واحد فقط
 يعني علاقة mant-to-one
 
 
 
 
-المتعلم ينضم لعدة مسارات 
+المتعلم ينضم لعدة مسارات
 المسار ينظم له اكثر من متعلم
 يعني علاقة many-to-many
- , حققتها ManyToManyField 
+ , حققتها ManyToManyField
  #  **حقل جديد: فقط للمتعلمين المنضمين**
     enrolled_learners = models.ManyToManyField(
         CustomUser,
@@ -87,7 +87,7 @@ B. للمتعلم
         verbose_name='المتعلمين المنضمين',
         blank=True,
         help_text='المتعلمين المنضمين فقط - لا يتم إضافة مشرفين',
-        limit_choices_to={'user_type': 'learner'} 
+        limit_choices_to={'user_type': 'learner'}
     )
 
 
@@ -108,7 +108,7 @@ B. للمتعلم
     "is_public": true
 }
 
-يجب ان اراها 
+يجب ان اراها
 2. update path:
   post http://127.0.0.1:8000/api/courses/path_id/update/
   header: Content-Type: application/json
@@ -155,7 +155,7 @@ B. للمتعلم
 
 
 للمتعلم:
- 7.عرض المسارات 
+ 7.عرض المسارات
  GET http://127.0.0.1:8000/api/courses/
  Content-Type: application/json
  Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9..

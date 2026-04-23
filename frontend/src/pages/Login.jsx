@@ -66,10 +66,10 @@ const Login = () => {
       <div className="auth-card">
         <h1 className="auth-title">تسجيل الدخول</h1>
         <p className="auth-subtitle">
-          {role === 'admin' 
-            ? 'تسجيل الدخول كمشرف' 
-            : role === 'learner' 
-            ? 'تسجيل الدخول كمتعلم' 
+          {role === 'admin'
+            ? 'تسجيل الدخول كمشرف'
+            : role === 'learner'
+            ? 'تسجيل الدخول كمتعلم'
             : 'مرحباً بك في نظام إدارة المسارات التعليمية'}
         </p>
 

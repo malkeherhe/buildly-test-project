@@ -68,5 +68,3 @@ Write-Host ""
 
 # تشغيل السيرفر
 python manage.py runserver
-
-

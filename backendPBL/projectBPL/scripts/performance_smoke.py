@@ -22,13 +22,18 @@ def make_request(url: str, timeout: int, token: str | None) -> dict:
     return {"status": status, "duration_ms": duration_ms}
 
 
-def run_smoke(url: str, requests_count: int, concurrency: int, timeout: int, token: str | None) -> dict:
+def run_smoke(
+    url: str, requests_count: int, concurrency: int, timeout: int, token: str | None
+) -> dict:
     started_at = time.strftime("%Y-%m-%d %H:%M:%S")
     durations = []
     failures = 0
 
     with ThreadPoolExecutor(max_workers=concurrency) as executor:
-        futures = [executor.submit(make_request, url, timeout, token) for _ in range(requests_count)]
+        futures = [
+            executor.submit(make_request, url, timeout, token)
+            for _ in range(requests_count)
+        ]
         for future in as_completed(futures):
             try:
                 result = future.result()
@@ -90,7 +95,9 @@ def write_report(result: dict, output_path: Path) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Simple performance smoke test for Buildly APIs.")
+    parser = argparse.ArgumentParser(
+        description="Simple performance smoke test for Buildly APIs."
+    )
     parser.add_argument("--url", default="http://127.0.0.1:8000/api/courses/")
     parser.add_argument("--requests", type=int, default=30)
     parser.add_argument("--concurrency", type=int, default=5)
@@ -98,11 +105,15 @@ def main() -> None:
     parser.add_argument("--token", default=None)
     parser.add_argument(
         "--output",
-        default=str(Path(__file__).resolve().parents[3] / "docs" / "performance-report.md"),
+        default=str(
+            Path(__file__).resolve().parents[3] / "docs" / "performance-report.md"
+        ),
     )
     args = parser.parse_args()
 
-    result = run_smoke(args.url, args.requests, args.concurrency, args.timeout, args.token)
+    result = run_smoke(
+        args.url, args.requests, args.concurrency, args.timeout, args.token
+    )
     write_report(result, Path(args.output))
     print(json.dumps(result, indent=2))
 

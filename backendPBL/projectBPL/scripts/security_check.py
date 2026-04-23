@@ -1,7 +1,6 @@
-from pathlib import Path
 import ast
 import sys
-
+from pathlib import Path
 
 SETTINGS_PATH = Path(__file__).resolve().parents[1] / "projectBPL" / "settings.py"
 

@@ -28,5 +28,3 @@ Write-Host ""
 
 # تشغيل السيرفر
 npm run dev
-
-

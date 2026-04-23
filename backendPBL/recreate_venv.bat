@@ -40,5 +40,3 @@ echo 2. pip install -r requirements.txt
 echo.
 
 pause
-
-
