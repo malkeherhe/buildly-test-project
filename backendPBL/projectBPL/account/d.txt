@@ -82,7 +82,7 @@ CustomUser:
     "first_name": "محمد",
     "last_name": "المشرف",
     "phone_number": "+966502345678",
-    "admin_code": "ADMIN_2024_SECRET"
+    "admin_code": "ADMIN_CODE_EXAMPLE"
 }
 ```
 
@@ -257,8 +257,8 @@ pip install django djangorestframework djangorestframework-simplejwt
         "user_type": "متعلم"
     },
     "tokens": {
-        "refresh": "eyJ0eXAiOiJKV1QiLCJhbGci...",
-        "access": "eyJ0eXAiOiJKV1QiLCJhbGci..."
+        "refresh": "<refresh-token-example>",
+        "access": "<access-token-example>"
     }
 }
 ```
