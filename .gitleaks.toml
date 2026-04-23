@@ -1,0 +1,10 @@
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Documentation examples and non-production sample payloads"
+paths = [
+  '''README\.md''',
+  '''backendPBL/projectBPL/account/d\.txt''',
+  '''frontend/README\.md'''
+]

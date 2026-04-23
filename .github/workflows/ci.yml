@@ -33,7 +33,7 @@ jobs:
           gitleaks version
 
       - name: Run Gitleaks scan
-        run: gitleaks detect --source . --verbose --redact --no-git
+        run: gitleaks detect --source . --config .gitleaks.toml --verbose --redact --no-git
 
       - name: Install backend dependencies
         working-directory: backendPBL/projectBPL
